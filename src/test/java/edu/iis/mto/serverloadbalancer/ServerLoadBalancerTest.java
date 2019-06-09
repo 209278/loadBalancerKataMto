@@ -26,7 +26,7 @@ public class ServerLoadBalancerTest {
 	@Test
 	public void balancingOneServerWithOneSlotCapacity_andOneSlotVm_fillsServerWithTheVm(){
 		Server theServer = a(server().withCapacity(1));
-		Vm theVm = a(vm().ofSzie(1));
+		Vm theVm = a(vm().ofSize(1));
 		balancing(aServersListWith(theServer), aVmsListWith(theVm));
 
 		assertThat(theServer, hasCurrentLoadOf(100.0d));
